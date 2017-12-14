@@ -11,8 +11,9 @@ public class Sort implements ISort {
         //ezért úgy döntöttem, hogy alapértelmezetten növekvõ rendezés lesz.
 
         for (int i = array.length - 1; i >= 1; i--) {
-
-           // int swaps = 0;
+//a swaps változó érték, ha az if feltétel érvényesül változik, ha nem akkor marad 0, így ha nem kellett cserélni
+// a tömbben az elemeket akkor leáll a for ciklus, nem kell végigmennie az összes elemen.
+            int swaps = 0;
 
             for (int j = 0; j <= i - 1; j++) {
 
@@ -20,12 +21,12 @@ public class Sort implements ISort {
                     int temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
-                   // ++swaps;
+                   ++swaps;
                 }
             }
 
-           // if (swaps == 0) {
-               // break;}
+            if (swaps == 0) {
+               break;}
         }
     }
 
